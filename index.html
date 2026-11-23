@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Olga Seminck</title>
-<meta name="description" content="Olga Seminck, ingénieure de recherche CNRS au laboratoire Lattice (UMR 8094, CNRS / ENS-PSL / Sorbonne Nouvelle). Traitement automatique des langues, psycholinguistique et humanités numériques.">
+<meta name="description" content="Olga Seminck, Research Scientist at CNRS, Lattice lab (UMR 8094, CNRS / ENS-PSL / Sorbonne Nouvelle). Computational literary studies, natural language processing and psycholinguistics.">
 <style>
   :root {
     --accent: #2c6e9b;
@@ -25,6 +25,18 @@
   }
   .page { max-width: 860px; margin: 0 auto; padding: 0 20px 60px; }
 
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 10;
+  }
+  nav .page { padding-bottom: 0; display: flex; flex-wrap: wrap; gap: 16px; }
+  nav a { color: var(--accent-dark); text-decoration: none; font-weight: 600; font-size: .92rem; }
+  nav a:hover { color: var(--accent); text-decoration: underline; }
+
   header {
     display: flex;
     flex-wrap: wrap;
@@ -43,6 +55,7 @@
     flex-shrink: 0;
   }
   header h1 { margin: 0 0 4px; font-size: 2rem; color: var(--accent-dark); }
+  header .email-riddle { margin: 0 0 6px; font-size: .95rem; color: var(--muted); font-family: monospace; }
   header .role { margin: 0 0 10px; font-size: 1.05rem; color: var(--muted); }
   .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
   .links a {
@@ -64,15 +77,19 @@
     padding-bottom: 6px;
     border-bottom: 1px solid var(--border);
   }
+  h3.sub { color: var(--accent-dark); font-size: 1.05rem; margin: 22px 0 6px; }
   p { margin: 10px 0; }
   ul { margin: 8px 0; padding-left: 22px; }
   li { margin: 6px 0; }
+  a { color: var(--accent); }
 
-  .pub-year { font-weight: 700; color: var(--accent-dark); margin-top: 18px; margin-bottom: 4px; }
-  .pub { margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--bg-soft); }
-  .pub .venue { color: var(--muted); font-size: .92rem; }
-  .pub a { color: var(--accent); text-decoration: none; }
-  .pub a:hover { text-decoration: underline; }
+  .entry { margin: 12px 0; padding-left: 14px; border-left: 3px solid var(--bg-soft); }
+  .entry .meta { color: var(--muted); font-size: .92rem; }
+  .entry .tag {
+    display: inline-block; margin-left: 6px; padding: 1px 8px;
+    border: 1px solid var(--border); border-radius: 12px;
+    color: var(--muted); font-size: .78rem;
+  }
 
   footer {
     margin-top: 50px;
@@ -85,139 +102,346 @@
 </style>
 </head>
 <body>
+
+<nav>
+  <div class="page">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#career">Career</a>
+    <a href="#grants">Grants</a>
+    <a href="#responsibilities">Responsibilities</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#supervision">Supervision</a>
+    <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <div class="page">
 
-  <header>
-    <!-- Photo de profil Google Scholar. Tu peux aussi la télécharger et la placer
-         dans le dépôt (ex. images/photo.jpg) puis remplacer le src par "images/photo.jpg". -->
-    <img class="photo" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=h9IBWb8AAAAJ&citpid=5" alt="Photo d'Olga Seminck">
+  <header id="about">
+    <!-- Google Scholar profile photo. You can also download it into the repo
+         (e.g. images/photo.jpg) and replace the src with "images/photo.jpg". -->
+    <img class="photo" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=h9IBWb8AAAAJ&citpid=5" alt="Photo of Olga Seminck">
     <div>
       <h1>Olga Seminck</h1>
-      <p class="role">Ingénieure de recherche CNRS — Laboratoire Lattice (UMR 8094, CNRS / ENS-PSL / Sorbonne Nouvelle), Montrouge</p>
+      <!-- Anti-spam riddle, keep as is: lastname.firstname@cnrs.fr -->
+      <p class="email-riddle">email: lastname.firstname@cnrs.fr</p>
+      <p class="role">Research Scientist at CNRS &mdash; <a href="https://www.lattice.cnrs.fr/">Lattice</a> lab (UMR 8094, CNRS / ENS-PSL / Sorbonne Nouvelle)</p>
       <div class="links">
-        <a href="https://scholar.google.com/citations?user=h9IBWb8AAAAJ&hl=fr">Google Scholar</a>
+        <a href="https://scholar.google.com/citations?user=h9IBWb8AAAAJ&hl=en">Google Scholar</a>
         <a href="https://aclanthology.org/people/olga-seminck/unverified/">ACL Anthology</a>
-        <a href="https://cv.hal.science/olga-seminck">CV HAL</a>
-        <a href="https://www.lattice.cnrs.fr/">Laboratoire Lattice</a>
+        <a href="https://orcid.org/0000-0003-4617-5992">ORCID</a>
+        <a href="https://cv.hal.science/olga-seminck">HAL CV</a>
+        <a href="https://www.lattice.cnrs.fr/">Lattice lab</a>
       </div>
     </div>
   </header>
 
-  <h2>À propos</h2>
+  <h2>About</h2>
   <p>
-    Je suis ingénieure de recherche au CNRS au sein du laboratoire
-    <a href="https://www.lattice.cnrs.fr/">Lattice</a> (Langues, Textes, Traitements informatiques, Cognition).
-    J'ai une formation en traitement automatique des langues (TAL) et je travaille sur des sujets
-    interdisciplinaires, à l'interface entre linguistique, psycholinguistique et humanités numériques.
+    I am a research scientist at the French National Centre for Scientific Research (CNRS),
+    in the <a href="https://www.lattice.cnrs.fr/">Lattice</a> lab (Langues, Textes, Traitements
+    informatiques, Cognition). My work lies at the interface between computational literary
+    studies / digital humanities and natural language processing (NLP), with applications in
+    linguistics and psycholinguistics.
+  </p>
+  <p>
+    I hold a PhD in computational linguistics from Universit&eacute; Paris Diderot
+    (Sorbonne Paris Cit&eacute;), defended in 2018, on <em>Cognitive Computational Models of
+    Pronoun Resolution</em> (supervised by Pascal Amsili and Adeline Nazarenko).
   </p>
 
-  <h2>Thèmes de recherche</h2>
+  <h2 id="research">Research</h2>
+  <p>My research interests, in a nutshell:</p>
   <ul>
-    <li>Résolution de la coréférence et de l'anaphore (y compris à l'ère des grands modèles de langue)</li>
-    <li>Schémas Winograd et raisonnement de sens commun</li>
-    <li>Corpus et humanités numériques : le corpus <em>CIDRE</em> pour l'étude de l'idiolecte</li>
-    <li>TAL multilingue et langues peu dotées</li>
-    <li>Psycholinguistique computationnelle et études sur corpus de littérature</li>
+    <li><strong>Computational literary studies and digital humanities</strong> &mdash; large-scale computational analysis of literary corpora and cultural data</li>
+    <li>Coreference and anaphora resolution, including with large language models</li>
+    <li>Winograd schemas and commonsense reasoning</li>
+    <li>Multilingual NLP and low-resource languages</li>
+    <li>Computational psycholinguistics</li>
+  </ul>
+  <p>Current projects:</p>
+  <p><em>To be completed &mdash; Olga will provide the details.</em></p>
+
+  <h2 id="career">Career</h2>
+  <p>The full CV is available on <a href="https://cv.hal.science/olga-seminck">HAL</a>.</p>
+
+  <h3 class="sub">Positions</h3>
+  <div class="entry">
+    <strong>Research Scientist</strong>, CNRS &mdash; Lattice lab (UMR 8094). Data production, processing and analysis.
+    <span class="meta">12/2021 &ndash; present</span>
+  </div>
+  <div class="entry">
+    <strong>Post-doc</strong>, CNRS &mdash; Lattice lab. Digital humanities, large literary collections.
+    <span class="meta">09/2020 &ndash; 11/2021</span>
+  </div>
+  <div class="entry">
+    <strong>Post-doc</strong>, Universit&eacute; catholique de Louvain (Belgium), CentAL / MiiL. Mind-It project: automatic detection of Alzheimer's disease from electronic messages.
+    <span class="meta">09/2019 &ndash; 08/2020</span>
+  </div>
+  <div class="entry">
+    <strong>ATER</strong> (teaching and research assistant), Sorbonne Universit&eacute; &mdash; UFR Sociology and computer science for the humanities.
+    <span class="meta">09/2018 &ndash; 08/2019</span>
+  </div>
+  <div class="entry">
+    <strong>PhD candidate</strong> (contractual, with teaching), Universit&eacute; Paris Diderot &mdash; Laboratoire de Linguistique Formelle &amp; LIPN.
+    <span class="meta">09/2015 &ndash; 08/2018</span>
+  </div>
+
+  <h3 class="sub">Education</h3>
+  <div class="entry">
+    <strong>PhD in Computational Linguistics</strong>, Universit&eacute; Sorbonne Paris Cit&eacute; / Universit&eacute; Paris Diderot.
+    <em>Cognitive Computational Models of Pronoun Resolution.</em>
+    <span class="meta">defended 23/11/2018</span>
+  </div>
+  <div class="entry">
+    <strong>MSc in Computational Linguistics</strong> (cum laude), Universit&eacute; Paris Diderot.
+    <span class="meta">2015</span>
+  </div>
+  <div class="entry">
+    <strong>BSc in Computational Linguistics</strong> (cum laude), Universit&eacute; Paris Diderot.
+    <span class="meta">2013</span>
+  </div>
+  <div class="entry">
+    <strong>BA in General Linguistics</strong> (cum laude, Honours), Vrije Universiteit Amsterdam.
+    <span class="meta">2012</span>
+  </div>
+
+  <h2 id="grants">Grants &amp; funded projects</h2>
+  <div class="entry">
+    <strong>TARTOAS</strong> (Sorbonne Alliance project) &mdash; co-leader.
+    <span class="meta">2024&ndash;2026 &middot; study days on 27/11/2026, see <a href="https://tartoas-red661.sciencesconf.org/">tartoas-red661.sciencesconf.org</a></span>
+  </div>
+  <div class="entry">
+    <strong>LatticIA: Mother Figures in Large Literary Corpora</strong> &mdash; sole principal investigator.
+    <span class="meta">funded by the "AI for the Humanities and Social Sciences: Equipment Funding" scheme</span>
+  </div>
+  <div class="entry">
+    <strong>Typsy-Acacia: Syntactic Typology and Acquisition of Grammatical Categories</strong> &mdash; principal investigator,
+    with Yayoi Nakamura-Delloye (Professor, Inalco), Mathieu Dehouck (Research Scientist, CNRS) and Pascal Amsili (Professor, Sorbonne Nouvelle) as co-leaders.
+  </div>
+
+  <h2 id="responsibilities">Responsibilities</h2>
+  <ul>
+    <li>Member of the executive committee of <a href="https://www.culturelab.psl.eu/">CultureLab</a> (PSL University research programme), representative of the Lattice lab</li>
+    <li>Responsible for the Lattice collective in the <a href="https://psl.eu/formation/personnalisez-vos-cursus/stages-urop-une-experience-de-la-recherche-des-la-licence">UROP programme</a> (Undergraduate Research Opportunity Program, PSL)</li>
+    <li>Organizing committee: <a href="https://tartoas-red661.sciencesconf.org/">TARTOAS study days</a> (27/11/2026) and the <a href="https://c2s.sciencesconf.org/">C&sup2;S Computational Cultural Science workshop</a> (Paris, 18&ndash;19/05/2026)</li>
   </ul>
 
-  <h2>Publications sélectionnées</h2>
-  <p>La liste complète est disponible sur mon profil
-    <a href="https://scholar.google.com/citations?user=h9IBWb8AAAAJ&hl=fr">Google Scholar</a>
-    et sur l'<a href="https://aclanthology.org/people/olga-seminck/unverified/">ACL Anthology</a>.</p>
+  <h2 id="teaching">Teaching</h2>
+  <p>From most recent to oldest:</p>
+  <div class="entry">
+    <strong>Natural Language Processing and Literature</strong> (<em>Traitement Automatique des Langues et de la Litt&eacute;rature</em>),
+    CPES Data, Arts and Culture (&Eacute;cole Louis-le-Grand), 2nd year (L2), together with Pascal Amsili and Antoine Bourgois.
+    <span class="meta">January&ndash;June 2027 &middot; <a href="https://psl.eu/formation/cpes-psl-louis-le-grand">programme page</a></span>
+  </div>
+  <div class="entry">
+    Tutorials (TD) for the course <strong>Formal Semantics</strong> (<em>S&eacute;mantique Formelle</em>), linguistics course at Sorbonne Nouvelle, course leader Pascal Amsili.
+    <span class="meta">January&ndash;May 2026</span>
+  </div>
+  <div class="entry">
+    <strong>ATER</strong> (teaching and research assistant), Sorbonne Universit&eacute; &mdash; UFR Sociology and computer science for the humanities.
+    <span class="meta">2018&ndash;2019</span>
+  </div>
 
-  <p class="pub-year">2026</p>
-  <div class="pub">
+  <h2 id="supervision">Supervision</h2>
+  <p><em>This list is still being completed.</em></p>
+  <div class="entry">
+    <strong>Alexey Kovrev</strong> (L2, CPES Data-Arts-Culture, 2027) &mdash; "Detecting negation for the automatic analysis of novel characters", co-supervised with Antoine Bourgois
+    <span class="meta">UROP programme</span>
+  </div>
+  <div class="entry">
+    <strong>Lucien V&eacute;rin</strong> (L2, CPES Data-Arts-Culture, 2027) &mdash; "First meetings and declarations of love in sentimental novels", co-supervised with Suzanne Mpouli (CultureLab engineer)
+    <span class="meta">UROP programme</span>
+  </div>
+  <div class="entry">
+    <strong>Oumaya Chelbi</strong> (M2, Sorbonne Nouvelle, <a href="https://plurital.org/">pluriTAL</a>, 2026) &mdash; "Memorization of song lyrics by large language models", together with Yoann Dupont
+    <span class="meta">internship grant funded by Lattice</span>
+  </div>
+  <div class="entry">
+    <strong>Nathan Ducros</strong> (M1, Sorbonne Nouvelle, pluriTAL, 2026) &mdash; "Building a dataset to identify birthing scenes in large literary corpora"
+    <span class="meta">internship grant funded by <a href="https://www.culturelab.psl.eu/">CultureLab</a></span>
+  </div>
+  <div class="entry">
+    <strong>Van Bach Nguyen</strong> (L2, Universit&eacute; Paris Dauphine, Applied Mathematics) &mdash; "Statistical analysis of the omission of <em>ne</em> in French"
+    <span class="meta">internship grant funded by Lattice</span>
+  </div>
+
+  <h2 id="publications">Selected publications</h2>
+  <p>The full list is available on my
+    <a href="https://scholar.google.com/citations?user=h9IBWb8AAAAJ&hl=en">Google Scholar</a>
+    and <a href="https://aclanthology.org/people/olga-seminck/unverified/">ACL Anthology</a> profiles.</p>
+
+  <h3 class="sub">2026</h3>
+  <div class="entry">
+    Lattice at SemEval-2026 Task 1: Why did the prompt engineer break up with their LLM? Because zero-shot was zero-fun.
+    Mathieu Dehouck, <strong>Olga Seminck</strong>, Marine Delaborde, Yoann Dupont, No&eacute; Durandard.
+    <span class="meta">Proceedings of the 20th International Workshop on Semantic Evaluation (SemEval 2026) &middot; <a href="https://aclanthology.org/2026.semeval-1.117/">ACL</a></span>
+  </div>
+  <div class="entry">
+    Why Computational Humanities Needs Falsifiable Theories.
+    Jean Barr&eacute;, Nicolas Baumard, Jeanne Boll&eacute;e, Alexandre Bluet, Jean-Baptiste Camps, Charles de Dampierre, Edgar Dubourg, Sylvain Estebe, Zhaolun Fan, Gr&eacute;gory Fiorio, Ze Fu, Mingmeng Geng, Ulysse Godreau, Konstantin Henke, Ruoting Liu, Paco Maunoir, Rowan Hall Maudslay, Olivier Morin, Suzanne Mpouli, Hossein Samani, <strong>Olga Seminck</strong>, Valentin Thouzeau, Ying Zhong, Pascal Amsili, Fr&eacute;d&eacute;ric Landragin, Th&eacute;o Moins.
+    <span class="meta">HAL preprint, 2026 &middot; <a href="https://hal.science/hal-05827443">HAL</a></span>
+  </div>
+  <div class="entry">
+    Toward an Ontological Representation of Fictional Characters.
+    <strong>Olga Seminck</strong> et al.
+    <span class="meta">Computational Humanities Research, 2026 &middot; <a href="https://doi.org/10.1017/chr.2026.10025">DOI</a></span>
+  </div>
+  <div class="entry">
     Closing the Gap at CRAC 2026: Two-Stage Adaptation for LLM-Based Multilingual Coreference Resolution.
-    Antoine Bourgois, <strong>Olga Seminck</strong>, Thierry Poibeau, Chloé Braud, Christian Hardmeier, Maciej Ogrodniczuk.
-    <span class="venue">CODI 2026. <a href="https://aclanthology.org/2026.codi-1.23/">[ACL]</a></span>
-  </div>
-  <div class="pub">
-    The Corpus for Idiolectal Research (CIDRE).
-    Philippe Gambette, <strong>Olga Seminck</strong>, Dominique Legallois, Thierry Poibeau.
-    <span class="venue">Computational Humanities Research, 2026. <a href="https://cv.hal.science/olga-seminck">[HAL]</a></span>
+    Antoine Bourgois, <strong>Olga Seminck</strong>, Thierry Poibeau, Chlo&eacute; Braud, Christian Hardmeier, Maciej Ogrodniczuk.
+    <span class="meta">CODI 2026 &middot; <a href="https://aclanthology.org/2026.codi-1.23/">ACL</a></span>
   </div>
 
-  <p class="pub-year">2025</p>
-  <div class="pub">
+  <h3 class="sub">2025</h3>
+  <div class="entry">
     GLaRef@CRAC2025: Should we transform coreference resolution into a text generation task?
     <strong>Olga Seminck</strong>, Antoine Bourgois, Yoann Dupont, Mathieu Dehouck, Marine Delaborde.
-    <span class="venue">Proceedings of the Eighth Workshop on Computational Models of Reference, Anaphora and Coreference (CRAC 2025), Suzhou, Chine. <a href="https://aclanthology.org/2025.crac-1.10/">[ACL]</a></span>
+    <span class="meta">CRAC 2025, Suzhou, China &middot; <a href="https://aclanthology.org/2025.crac-1.10/">ACL</a></span>
   </div>
-  <div class="pub">
+  <div class="entry">
     Lattice @MultiGEC-2025: A Spitful Multilingual Language Error Correction System Using LLaMA.
-    <strong>Olga Seminck</strong>, Yoann Dupont, Mathieu Dehouck, Qi Wang, Noé Durandard, Margo Novikov.
-    <span class="venue">14th Workshop on NLP for Computer Assisted Language Learning (NLP4CALL 2025), Tallinn, Estonie. <a href="https://aclanthology.org/2025.nlp4call-1.2/">[ACL]</a></span>
+    <strong>Olga Seminck</strong>, Yoann Dupont, Mathieu Dehouck, Qi Wang, No&eacute; Durandard, Margo Novikov.
+    <span class="meta">NLP4CALL 2025, Tallinn, Estonia &middot; <a href="https://aclanthology.org/2025.nlp4call-1.2/">ACL</a></span>
+  </div>
+  <div class="entry">
+    Modeling the Construction of a Literary Archetype: The Case of the Detective Figure in French Literature.
+    Jean Barr&eacute;, <strong>Olga Seminck</strong>, Antoine Bourgois, Thierry Poibeau.
+    <span class="meta">CHR 2025, Anthology of Computers and the Humanities, Vol. 3 &middot; <a href="https://anthology.ach.org/volumes/vol0003/modeling-construction-of-literary-archetype-case/">ACH</a></span>
   </div>
 
-  <p class="pub-year">2024</p>
-  <div class="pub">
-    Articles dans le <span class="venue">Journal of Computational Literary Studies</span> et
-    <span class="venue">Literature and Computation</span> (2024). <a href="https://cv.hal.science/olga-seminck">[HAL]</a>
+  <h3 class="sub">2024</h3>
+  <div class="entry">
+    FReND: A French Resource of Negation Data.
+    Hafida Le Cloirec-A&iuml;t Yahya, <strong>Olga Seminck</strong>, Pascal Amsili.
+    <span class="meta">LREC-COLING 2024 &middot; <a href="https://aclanthology.org/2024.lrec-main.658/">ACL</a></span>
+  </div>
+  <div class="entry">
+    BookNLP-fr, the French Versant of BookNLP: A Tailored Pipeline for 19th and 20th Century French Literature.
+    Fr&eacute;d&eacute;rique M&eacute;lanie-Becquet, Jean Barr&eacute;, <strong>Olga Seminck</strong>, Cl&eacute;ment Plancq, Marco Naguib, Martial Pastor, Thierry Poibeau.
+    <span class="meta">Journal of Computational Literary Studies, 2024 &middot; <a href="https://cnrs.hal.science/hal-04722979">HAL</a></span>
+  </div>
+  <div class="entry">
+    Remember to Forget: A Study on Verbatim Memorization of Literature in Large Language Models.
+    Xinhao Zhang, <strong>Olga Seminck</strong>, et al.
+    <span class="meta">CHR 2024, Aarhus, Denmark &middot; <a href="https://2024.computational-humanities-research.org/papers/paper96/">CHR</a></span>
   </div>
 
-  <p class="pub-year">2023</p>
-  <div class="pub">
-    Conversational AI: Dialogue Systems, Conversational Agents, and Chatbots (compte rendu d'ouvrage).
+  <h3 class="sub">2023</h3>
+  <div class="entry">
+    Conversational AI: Dialogue Systems, Conversational Agents, and Chatbots by Michael McTear (book review).
     <strong>Olga Seminck</strong>.
-    <span class="venue">Computational Linguistics, 2023. <a href="https://aclanthology.org/2023.cl-1.9/">[ACL]</a></span>
+    <span class="meta">Computational Linguistics 49(1), 2023 &middot; <a href="https://aclanthology.org/2023.cl-1.9/">ACL</a></span>
   </div>
 
-  <p class="pub-year">2022</p>
-  <div class="pub">
+  <h3 class="sub">2022</h3>
+  <div class="entry">
     Subject Verb Agreement Error Patterns in Meaningless Sentences: Humans vs. BERT.
     Karim Lasri, <strong>Olga Seminck</strong>, Alessandro Lenci, Thierry Poibeau.
-    <span class="venue">COLING 2022. <a href="https://aclanthology.org/events/coling-2022/">[ACL]</a></span>
+    <span class="meta">COLING 2022 &middot; <a href="https://aclanthology.org/2022.coling-1.4/">ACL</a></span>
   </div>
-  <div class="pub">
-    Article dans le <span class="venue">Journal of Cultural Analytics</span>, 7(3), 2022. <a href="https://cv.hal.science/olga-seminck">[HAL]</a>
+  <div class="entry">
+    Investigating Associative, Switchable and Negatable Winograd Items on Renewed French Data Sets.
+    Xiaoou Wang, <strong>Olga Seminck</strong>, Pascal Amsili.
+    <span class="meta">TALN-RECITAL 2022 &middot; <a href="https://aclanthology.org/2022.jeptalnrecital-taln.13/">ACL</a></span>
+  </div>
+  <div class="entry">
+    The Evolution of the Idiolect over the Lifetime: A Quantitative and Qualitative Study of French 19th Century Literature.
+    <strong>Olga Seminck</strong>, Philippe Gambette, Dominique Legallois, Thierry Poibeau.
+    <span class="meta">Journal of Cultural Analytics 7(3), 2022 &middot; <a href="https://doi.org/10.22148/001c.37588">DOI</a></span>
   </div>
 
-  <p class="pub-year">2021</p>
-  <div class="pub">
+  <h3 class="sub">2021</h3>
+  <div class="entry">
     The Corpus for Idiolectal Research (CIDRE).
-    Philippe Gambette, <strong>Olga Seminck</strong>, Dominique Legallois, Thierry Poibeau.
-    <span class="venue">EADH 2021 / Journal of Open Humanities Data. <a href="https://cv.hal.science/olga-seminck">[HAL]</a></span>
+    <strong>Olga Seminck</strong>, Philippe Gambette, Dominique Legallois, Thierry Poibeau.
+    <span class="meta">Journal of Open Humanities Data 7(15), 2021 &middot; <a href="https://doi.org/10.5334/johd.42">DOI</a></span>
   </div>
-  <div class="pub">
+  <div class="entry">
     Evaluating Hierarchical Clustering Methods for Corpora with Chronological Order.
     Philippe Gambette, <strong>Olga Seminck</strong>, Dominique Legallois, Thierry Poibeau.
-    <span class="venue">EADH 2021. <a href="https://cv.hal.science/olga-seminck">[HAL]</a></span>
+    <span class="meta">EADH 2021 &middot; <a href="https://cv.hal.science/olga-seminck">HAL</a></span>
   </div>
 
-  <p class="pub-year">2019</p>
-  <div class="pub">
-    Modèles de langue appliqués aux schémas Winograd français.
-    <strong>Olga Seminck</strong>, Pascal Amsili, et al.
-    <span class="venue">JEP-TALN-RECITAL 2019. <a href="https://aclanthology.org/2019.jeptalnrecital-court.20/">[ACL]</a></span>
+  <h3 class="sub">2020</h3>
+  <div class="entry">
+    The Use of Naturalistic Reading Corpora for the Study of Pronoun and Coreference Resolution.
+    <strong>Olga Seminck</strong>.
+    <span class="meta">Language and Linguistics Compass, 2020 &middot; <a href="https://doi.org/10.1111/lnc3.12395">DOI</a></span>
+  </div>
+  <div class="entry">
+    The Mind-It Corpus: A Longitudinal Corpus of Electronic Messages Written by Older Adults with Incipient Alzheimer's Disease and Clinically Normal Volunteers.
+    <strong>Olga Seminck</strong>, Louise-Am&eacute;lie Cougnon, Bernard Hanseeuw, C&eacute;drick Fairon.
+    <span class="meta">RaPID Workshop @ LREC 2020 &middot; <a href="https://aclanthology.org/volumes/2020.rapid-1/">ACL</a></span>
   </div>
 
-  <p class="pub-year">2018</p>
-  <div class="pub">
+  <h3 class="sub">2019</h3>
+  <div class="entry">
+    Language Models Applied to French Winograd Schemas (Mod&egrave;les de langue appliqu&eacute;s aux sch&eacute;mas Winograd fran&ccedil;ais).
+    <strong>Olga Seminck</strong>, Vincent Segonne, Pascal Amsili.
+    <span class="meta">TALN-RECITAL 2019 &middot; <a href="https://aclanthology.org/2019.jeptalnrecital-court.20/">ACL</a></span>
+  </div>
+
+  <h3 class="sub">2018</h3>
+  <div class="entry">
     A Gold Anaphora Annotation Layer on an Eye Movement Corpus.
     <strong>Olga Seminck</strong>, Pascal Amsili.
-    <span class="venue">LREC 2018. <a href="https://aclanthology.org/L18-1555/">[ACL]</a></span>
+    <span class="meta">LREC 2018 &middot; <a href="https://aclanthology.org/L18-1555/">ACL</a></span>
+  </div>
+  <div class="entry">
+    Cognitive Computational Models of Pronoun Resolution.
+    <strong>Olga Seminck</strong>.
+    <span class="meta">PhD thesis, Universit&eacute; Paris Diderot (Sorbonne Paris Cit&eacute;), 2018 &middot; <a href="https://cv.hal.science/olga-seminck">HAL</a></span>
   </div>
 
-  <p class="pub-year">2017</p>
-  <div class="pub">
+  <h3 class="sub">2017</h3>
+  <div class="entry">
     A Google-Proof Collection of French Winograd Schemas.
     Pascal Amsili, <strong>Olga Seminck</strong>.
-    <span class="venue">CORBON 2017. <a href="https://aclanthology.org/W17-1504/">[ACL]</a></span>
+    <span class="meta">CORBON 2017 &middot; <a href="https://aclanthology.org/W17-1504/">ACL</a></span>
   </div>
-  <div class="pub">
+  <div class="entry">
     A Computational Model of Human Preferences for Pronoun Resolution.
     <strong>Olga Seminck</strong>, Pascal Amsili.
-    <span class="venue">EACL 2017. <a href="https://aclanthology.org/E17-4006/">[ACL]</a></span>
+    <span class="meta">EACL 2017 &middot; <a href="https://aclanthology.org/E17-4006/">ACL</a></span>
   </div>
-  <div class="pub">
-    Schémas Winograd en français : une étude statistique et comportementale.
+  <div class="entry">
+    Sch&eacute;mas Winograd en fran&ccedil;ais : une &eacute;tude statistique et comportementale.
     Pascal Amsili, <strong>Olga Seminck</strong>.
-    <span class="venue">TALN 2017, Orléans. <a href="https://cv.hal.science/olga-seminck">[HAL]</a></span>
+    <span class="meta">TALN 2017, Orl&eacute;ans &middot; <a href="https://aclanthology.org/2017.jeptalnrecital-court.4/">ACL</a></span>
   </div>
 
+  <h2 id="talks">Talks &amp; presentations</h2>
+  <p><em>This list is still being completed.</em></p>
+  <div class="entry">
+    "When data sheds light on cultures and societies" (<em>Quand les donn&eacute;es &eacute;clairent les cultures et les soci&eacute;t&eacute;s</em>),
+    PSL webinar for the university's research programmes, with Alexandre Bluet (CultureLab Chair of Excellence).
+    <span class="meta">04/11/2026, 12:15&ndash;13:30</span>
+  </div>
+  <div class="entry">
+    "LLMs for dummies" (<em>Les LLM pour les nuls</em>), Mat&eacute;SHS presentation series (CNRS professional network).
+    <span class="meta">17/01/2025 &middot; <a href="https://mate-shs.cnrs.fr/">mate-shs.cnrs.fr</a></span>
+  </div>
+  <div class="entry">
+    Lattice@Mwahaha: humorous reply generation by large language models.
+    <span class="meta"><a href="https://humour-et-ia.sciencesconf.org/">Humour and AI</a> event &middot; <a href="https://humour-et-ia.sciencesconf.org/data/pages/PROGRAMME_JE.pdf">programme (PDF)</a></span>
+  </div>
+
+  <h2 id="contact">Contact</h2>
+  <p>
+    <!-- Anti-spam riddle, keep as is: lastname.firstname@cnrs.fr -->
+    Email: <span style="font-family: monospace;">lastname.firstname@cnrs.fr</span>
+  </p>
+  <p>
+    <a href="https://www.lattice.cnrs.fr/">Lattice</a> lab (UMR 8094, CNRS / ENS-PSL / Sorbonne Nouvelle)
+  </p>
+
   <footer>
-    Olga Seminck — Laboratoire Lattice, UMR 8094 (CNRS / ENS-PSL / Sorbonne Nouvelle),
-    1 rue Maurice Arnoux, 92120 Montrouge.
+    <p>Olga Seminck &mdash; Lattice lab, UMR 8094 (CNRS / ENS-PSL / Sorbonne Nouvelle)</p>
+    <p>This website was generated with the assistance of <strong>Emmy</strong>, the AI assistant provided by CNRS.</p>
   </footer>
 
 </div>
